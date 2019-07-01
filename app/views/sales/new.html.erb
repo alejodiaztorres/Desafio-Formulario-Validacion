@@ -1,0 +1,47 @@
+<h1> Formulario </h1>
+<%= form_with(model: @sale, local: true) do |form|%>
+
+<div class= "field">
+    <%= form.label :cod%>
+    <br>
+    <%= form.number_field :cod%>
+</div>
+
+<div class= "field">
+    <%= form.label :detail%>
+    <br>
+    <%= form.text_area :detail %>
+</div>
+
+<div class= "field">
+    <%= form.label :category%>
+    <br>
+    <%= form.select :category,
+    options_for_select(@categories), {prompt: 'Seleccione una categoria'}%>
+</div>
+
+<div class= "field">
+    <%= form.label :value%>
+    <br>
+    <%= form.number_field :value%>
+</div>
+
+<div class= "field">
+    <%= form.label :discount%>
+    <br>
+    <%= form.text_field :discount%>
+</div>
+
+<div class= "field">
+    <%= form.label :tax%>
+    <%= form.check_box :tax%>
+</div>
+<br>
+<br>
+
+<div class="actions">
+<%= form.submit%>
+<div>
+
+
+<%end%>
